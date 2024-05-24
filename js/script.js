@@ -142,7 +142,8 @@ function deletarDespesa(item) {
                         title: "",
                         text: data.error,
                         icon: 'warning',
-                        showCancelButton: true
+                        showCancelButton: false
+
                     });
                 } else {
                     console.log("correct");
@@ -150,8 +151,14 @@ function deletarDespesa(item) {
                         title: "",
                         text: data.mensagem,
                         icon: "success",
-                        showCancelButton: true
+                        showConfirmButton: false,
+                        showCancelButton: false
+
                     });
+                    setTimeout(function(){
+                        location.reload();
+                    }, 1500);  
+                   
                 }
             }).catch(data => {
             
@@ -202,7 +209,8 @@ formAtualizarDespesa.addEventListener("submit", (e) => {
                         title: "",
                         text: data.error,
                         icon: "warning",
-                        showCancelButton: true
+                        showCancelButton: false
+
                       });
                 } else {
                     console.log("correct");
@@ -210,8 +218,14 @@ formAtualizarDespesa.addEventListener("submit", (e) => {
                         title: "",
                         text: data.mensagem,
                         icon: "success",
-                        showCancelButton: true
+                        showConfirmButton: false,
+                        showCancelButton: false
+
                       });
+
+                      setTimeout(function(){
+                        location.reload();
+                    }, 1500);  
                 }
             }).catch(data => {
             
@@ -269,7 +283,8 @@ formDespesa.addEventListener("submit", (e) => {
                         title: "",
                         text: data.error,
                         icon: "warning",
-                        showCancelButton: true
+                        showCancelButton: false
+
                       });
                 } else {
                     console.log("correct");
@@ -277,8 +292,14 @@ formDespesa.addEventListener("submit", (e) => {
                         title: "",
                         text: data.mensagem,
                         icon: "success",
-                        showCancelButton: true
+                        showConfirmButton: false,
+                        showCancelButton: false
+
                       });
+
+                      setTimeout(function(){
+                        location.reload();
+                    }, 1500);  
                 }
             }).catch(data => {
             
