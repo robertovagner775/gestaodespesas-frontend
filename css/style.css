@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #5f6876  ;
+    --second-color: #48525f;
+    --tree-color: #313c48 ;
+    --four-color: #1a2532;
+    --five-color: #030f1b;
+    
+}    
+.spanFilter {
+    text-align: center;
+}
+fieldset {
+    border: none;
+}
+legend {
+   
+    font-size: 24px;
+    text-align: center;
+}
+label {
+    color: #030f1b;
+}
+dialog {
+    border: none;
+    border-radius: 8px;
+}
+dialog::backdrop {
+    background-color: rgb(0 0 0 / .5);
+}
+dialog div  {
+    margin-bottom: 28px;
+}
+
+#formAtualizarModal div div.cardForm {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#formDefinirModal  div.cardForm {
+    display: flex;
+    flex-direction: column;
+   
+}
+.btnModal {
+    background-color: var(--five-color);
+    padding: 9px;
+    border: none;
+    border-radius: 4px;
+    font-size: small;
+    color: #fff;
+    transition: 0.5s;
+}
+.btnModal:hover {
+    cursor: pointer;
+    background-color: #fff;
+    padding: 9px;
+    border: none;
+    border-radius: 4px;
+    font-size: small;
+    border: 1px solid var(--five-color);
+    color: var(--five-color);
+}
+html, body {
+    font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #d5dbff;
+}    
+header {
+    width: 100%;
+    height: 75px;
+    background-color: var(--five-color);
+}    
+.container {
+  min-height: 100%;
+  width: 90%;
+  margin: 120px;
+  
+   
+}    
+.formularios {
+    display: flex;
+    flex-direction: row;
+
+    width: 90%;
+   
+    background-color: #fff;
+    margin-bottom: 100px;
+    padding-top: 12px;
+    box-shadow: grey 2px 2px 4px;
+
+ 
+}    
+.formContainer {
+    color: var(--five-color);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 50%;
+
+    
+} 
+.formContainer form fieldset.grupo {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+   
+    width: 250px;
+  
+    
+}  
+
+form .cardBodyModal {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form .cardBodyModal .modal {
+    margin: 5px;
+}
+
+form .cardBodyModal .modal .inputModal {
+    border-radius: 4px;
+    border: 1px solid var(--five-color);
+    outline: 0;
+    margin: 4px;
+    width: 200px;
+    height: 40px;
+}  
+
+
+form .cardBodyModal .modal .inputMessageModal {
+    border-radius: 4px;
+    font-family: inherit;
+    border: 1px solid var(--five-color);
+    outline: 0;
+    margin: 4px;
+    width: 200px;
+    height: 70px;
+}    
+
+.input {
+    border-radius: 4px;
+    border: 1px solid var(--five-color);
+    outline: 0;
+    margin: 4px;
+    width: 160px;
+    height: 35px;
+}    
+.inputMessage {
+    border-radius: 4px;
+    font-family: inherit;
+    border: 1px solid var(--five-color);
+    outline: 0;
+    margin: 4px;
+    width: 160px;
+    height: 60px;
+}    
+.cardButton {
+    margin-left: 28px;
+}
+.btnDespesa {
+    padding: 10px;
+    background-color: var(--five-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: 0.5s;
+} 
+.btnDespesa:hover {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+    color: var(--five-color);
+    border: 2px solid var(--five-color);
+}
+
+.containerModal {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    padding-bottom: 28px;
+    height: 270px;
+    width: 40%;
+}
+.cardTitulo {
+    width: 100%;
+    text-align: center;
+}
+.cardModal {
+    width: 100%;
+  
+}
+.openModel {
+    
+    border-radius: 8px;
+    width: 250px;
+    padding: 16px;
+    color: #fff;
+    
+    background-color: var(--five-color);
+    transition: 0.5s;
+}
+
+.openModel:hover {
+    cursor: pointer;
+    border: 2px solid var(--five-color);
+    border-radius: 8px;
+    width: 250px;
+    padding: 16px;
+    color: var(--five-color);
+    
+    background-color: #fff;
+}
+#busca {
+    background-color: #fff;
+    width: 250px;
+    height: 35px;
+    border: none;
+    box-shadow: grey 2px 2px 4px;
+    margin-bottom: 16px;
+    transition: 0.5s;
+}    
+#busca:focus {
+    width: 275px;
+} 
+
+span {
+    display: none;
+}
+#btnFiltro {
+    padding: 8px;
+    background-color: var(--five-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: 0.5s;
+} 
+#btnFiltro:hover {
+    cursor: pointer;
+    padding: 8px;
+    background-color: #fff;
+    color: var(--five-color);
+    border: 2px solid var(--five-color);
+
+    border-radius: 6px;
+}   
+#btnRestaurar {
+   
+    padding: 8px;
+    background-color: var(--four-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: 0.5s;
+} 
+#btnRestaurar:hover {
+    cursor: pointer;
+    padding: 8px;
+    background-color: #fff;
+    color: var(--four-color);
+    border: 2px solid var(--four-color);
+
+    border-radius: 6px;
+}    
+.containerTable {
+    width: 100%;
+    
+}    
+table {
+    width: 90%;
+    margin: 0;
+    box-shadow: grey 2px 2px 4px;
+    text-align: center;
+    background-color: #fff;
+}   
+table, th, td{
+    border-collapse: collapse; /*define a separação entre as bordar*/
+   
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+table tr th {
+  
+    border: none;
+    padding: 8px;
+    color: white;
+
+    background-color: var(--five-color);
+}   
+
+
+
+table tr:nth-child(2n) {
+    color: #fff;
+    background-color: var(--tree-color);
+}
+
+
+table tr td.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.buttonTab  {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--five-color);
+    transition: 0.25ms;
+} 
+.buttonTab img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}   
+.buttonTab:hover {
+    cursor: pointer;
+    background-color: var(--four-color);
+  
+}  
+
+.containerTotal {
+    margin-top: 36px;
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.cardSaldo {
+    display: flex;
+    flex-direction: row;
+    margin-left: 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: grey 2px 2px 4px;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: var(--five-color);
+}

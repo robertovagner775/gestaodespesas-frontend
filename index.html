@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Despesas</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" >
+
+</head>
+<body>
+
+    <header>
+
+
+    </header>
+
+    <main class="container">
+
+        <dialog id="modalFiltro">
+            <form id="formFiltro">
+                <div class="cardBodyModal">
+                    <div class="modal">
+                        <h2>Definir Filtro</h2>
+                    </div>
+                    <div class="modal">
+                        <label>Data Inicial</label>
+                        <input class="inputModal" type="date" id="dataInicial">
+                        <span class="spanFilter"></span>
+        
+                    </div>
+                    <div  class="modal">
+                        <label>Data Final</label>
+                        <input class="inputModal" type="date" id="dataFinal">
+                        <span class="spanFilter"></span>
+                    </div>
+                    <div  class="modal">
+                        <label  for="">Categoria</label>
+                        
+                        <select class="inputModal" name="" id="categoriaFiltro">
+                            <option value=""></option>
+                                <option value="ALIMENTACAO">alimentação</option>
+                                <option value="MORADIA">moradia</option>
+                                <option value="TRANSPORTE">transporte</option>
+                                <option value="SAUDE">saude</option>
+                                <option value="LAZER">lazer</option>
+                        </select>
+                        <span class="spanFilter"></span>
+                    </div>
+
+                    <div class="modal">
+                        <button class="btnDespesa" id="btnFiltrarDataCategoria" onclick="filtrarDataCategoria()">Filtrar</button>
+                        <button class="btnDespesa" onclick="document.getElementById('modalFiltro').close()">Fechar</button>
+                    </div>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog id="modalDefinir">
+            <form id="formDefinirModal" action="">
+                <h3>Definir Saldo</h3>
+                <div class="cardForm">
+                    <label for="">Valor</label>
+                    <input id="saldoDefinir" placeholder=" R$ 0.00" class="input" type="text">
+                    <span></span>
+                </div>
+                <button class="btnModal" id="mdCloseDefinir" type="reset">FECHAR</button>
+                <button class="btnModal" id="btnEnviardefinir" type="submit">ENVIAR</button>
+            </form>
+        </dialog>
+
+        <dialog id="modalAtualizar">
+            <form id="formAtualizarModal">
+                <div>
+                    <h3>Atualizar Saldo</h3>
+                    <div class="cardForm">
+                        <label for="">Valor</label>
+                        <input placeholder=" R$ 0.00" class="input" id="valorSaldo" type="text">
+                        <span></span>
+                    </div>
+                    <div>
+                        <button class="btnDespesa" id="mdCloseAtualizar" type="reset">FECHAR</button>
+                        <button class="btnDespesa" id="btnEnviarAtualizar" type="submit">ENVIAR</button>
+                    </div>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog id="modalAtualizarDespesa">
+
+            
+            <form id="formAtualizarDespesa">
+              
+                    <div class="cardTitulo">
+                        <h2>Atualizar Despesa</h2>
+                    </div>
+                <div class="cardBodyModal">
+                        <input type="hidden" id="idModal">
+                        <div class="modal">
+                            <label for="">Valor</label>
+                            <br>
+                            <input placeholder="0.00" id="valorModal" class="inputModal" type="text">
+                            <span></span>
+                        </div>
+
+                        <div class="modal">
+                            <label for="">Categoria</label>
+                            <br>
+                        <select class="inputModal" name="" id="categoriaModal">
+                                <option value=""></option>
+                                <option value="0">alimentação</option>
+                                <option value="1">moradia</option>
+                                <option value="2">transporte</option>
+                                <option value="3">saude</option>
+                                <option value="4">lazer</option>
+                        </select>
+                        <span></span>
+                        </div>
+                    
+                
+                        <div class="modal">
+                            <label for="">Descrição</label>
+                            <br>
+                            <textarea id="descricaoModal" placeholder="digite um pouco sobre a despesa" class="inputMessageModal" type="text"></textarea>
+                            <span></span>
+                        </div>
+                     
+                        <div class="modal">
+                            <label for="">Data</label>
+                            <br>
+                            <input id="dataModal"  class="inputModal" type="date">
+                            <span></span>
+                        </div>
+                 
+                    
+                    
+                    <div class="modal"> 
+                        <button class="btnDespesa" type="submit" id="enviarModalAtualizar">ENVIAR</button>
+                        <button class="btnDespesa" type="reset">fechar</button>
+                    </div>
+                </div>
+              
+                
+            </form>
+
+        </dialog>
+
+        <dialog id="modalExcluirDespesa">
+            <h4>Excluir Despesa</h4>
+            <p>tem certeza que deseja realmente excluir essa despesa?</p>
+            <button class="btnModal" id="fecharModalExcluir">Fechar</button>
+            <button class="btnModal" id="btnExcluir">Excluir</button>
+
+        </dialog>
+
+        <h2>Gerenciamento de Despesas</h2>
+        <div class="formularios">
+        <div class="formContainer">
+
+            <form id="formDespesa">
+                <fieldset>
+                    <div class="cardTitulo">
+                        <h2>Adicionar Despesa</h2>
+                    </div>
+                <div class="cardBody">
+                    <fieldset class="grupo">
+                        <div>
+                            <label for="">Valor</label>
+                            <br>
+                            <input placeholder="0.00" id="valor" class="input required" type="text">
+                            <span>digite um valor valido</span>
+                        </div>
+
+                        <div>
+                            <label for="">Categoria</label>
+                            <br>
+                        <select class="input required" name="" id="categoria">
+                            <option value=""></option>
+                                <option value="0">alimentação</option>
+                                <option value="1">moradia</option>
+                                <option value="2">transporte</option>
+                                <option value="3">saude</option>
+                                <option value="4">lazer</option>
+                        </select>
+                        <span></span>
+                        </div>
+                    
+                    </fieldset>
+                    <fieldset class="grupo">
+                        <div>
+                            <label for="">Descrição</label>
+                            <br>
+                            <textarea id="descricao" placeholder="digite um pouco sobre a despesa" class="inputMessage required" type="text"></textarea>
+                            <span>digite uma descrição</span>
+                        </div>
+                     
+                        <div>
+                            <label for="">Data</label>
+                            <br>
+                            <input id="data" class="input required" type="date">
+                            <span>digite uma data valida</span>
+                        </div>
+                    </fieldset>
+                    
+                    
+                    <div class="cardButton"> 
+                        <button class="btnDespesa" type="submit">ENVIAR</button>
+                        <button class="btnDespesa" type="reset" id="btnLimpar">LIMPAR</button>
+                    </div>
+                </div>
+              
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="containerModal">
+            <fieldset>
+                <div class="cardTitulo">
+                    <h2>Gerenciar Saldo</h2>
+                </div>
+               
+                <div class="cardModal">
+                    <h3>Definir Saldo Inicial</h3>
+                    <button class="openModel" id="btnOpenDefinir">Abrir Formulario</button>
+                </div>
+
+                <div class="cardModal"> 
+                    <h3>Atualizar Saldo</h3>
+                    <button class="openModel" id="btnOpenAtualizar">Abrir Formulario</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+        <div class="containerPesquisa">
+          
+            <input placeholder="Pesquise uma Despesa" type="text" id="busca">
+            <button id="btnFiltro">Adicionar Filtro</button>
+            <button id="btnRestaurar">Remover Filtro</button>
+        </div>
+
+
+        <div class="containerTable">
+           
+
+            <table >
+                <thead>
+                    <tr>
+                        <th>descrição</th>
+                        <th>valor</th>
+                        <th>categoria</th>
+                        <th>data</th>
+                        <th>ações</th>
+                    </tr>
+                </thead>
+                <tbody  id="tableDespesa">
+                    
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="containerTotal">
+            <div class="cardSaldo">
+                Gastos Alimentacão: <div id="totalAlimentacao"> R$ 0</div>
+            </div>
+            <div class="cardSaldo">
+                Gastos Moradia: <div id="totalMoradia"> R$ 0</div>
+            </div>
+            <div class="cardSaldo">
+                Gastos Saude: <div id="totalSaude"> R$ 0</div>
+            </div>
+            <div class="cardSaldo">
+                Gastos Lazer: <div id="totalLazer"> R$ 0</div>
+            </div>
+            <div class="cardSaldo">
+                Gastos Transportes: <div id="totalTransporte"> R$ 0</div>
+            </div>
+            <div class="cardSaldo">
+                Saldo Total: <div id="saudoDisponivel"> R$ 0</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
